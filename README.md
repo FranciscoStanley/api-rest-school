@@ -2,7 +2,7 @@
 
 ## Projeto de uma SPA de escola.
 
-### Tecnologias usadas
+### Tecnologias usada
 
 * NodeJS
 * Express
