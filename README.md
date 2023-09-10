@@ -3,7 +3,7 @@
 ## Projeto de uma SPA de escola.
 
 ### Tecnologias usada
-
+BACK-END
 * NodeJS
 * Express
 * ORM -> Sequelize
@@ -12,3 +12,5 @@
 * multer
 * dotenv
 * MYSQL -> MariaDB
+
+FRONT-END
