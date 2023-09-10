@@ -1,9 +1,9 @@
-import Photo from '../models/Photo';
-import studentModel from '../models/Student';
+"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _Photo = require('../models/Photo'); var _Photo2 = _interopRequireDefault(_Photo);
+var _Student = require('../models/Student'); var _Student2 = _interopRequireDefault(_Student);
 
 class StudentService {
   async createService(name, surname, email, age, weight, height) {
-    const newStudent = await studentModel.create({
+    const newStudent = await _Student2.default.create({
       name,
       surname,
       email,
@@ -15,11 +15,11 @@ class StudentService {
   }
 
   async getAllService() {
-    const students = await studentModel.findAll({
+    const students = await _Student2.default.findAll({
       attributes: ['id', 'name', 'surname', 'email', 'age', 'weight', 'height'],
-      order: [['id', 'DESC'], [Photo, 'id', 'DESC']],
+      order: [['id', 'DESC'], [_Photo2.default, 'id', 'DESC']],
       include: {
-        model: Photo,
+        model: _Photo2.default,
         attributes: ['url', 'filename'],
       },
     });
@@ -31,11 +31,11 @@ class StudentService {
       throw new Error('Send id');
     }
 
-    const student = await studentModel.findByPk(id, {
+    const student = await _Student2.default.findByPk(id, {
       attributes: ['id', 'name', 'surname', 'email', 'age', 'weight', 'height'],
-      order: [['id', 'DESC'], [Photo, 'id', 'DESC']],
+      order: [['id', 'DESC'], [_Photo2.default, 'id', 'DESC']],
       include: {
-        model: Photo,
+        model: _Photo2.default,
         attributes: ['url', 'filename'],
       },
     });
@@ -48,13 +48,13 @@ class StudentService {
   }
 
   async updateService(id, userId, userEmail, name, surname, email, password) {
-    const hasEmail = await studentModel.findOne({ where: { email } });
+    const hasEmail = await _Student2.default.findOne({ where: { email } });
 
     if (hasEmail) {
       throw new Error('Email is already in use');
     }
 
-    const hasStudent = await studentModel.findOne({
+    const hasStudent = await _Student2.default.findOne({
       where: { email: userEmail },
     });
 
@@ -66,7 +66,7 @@ class StudentService {
       throw new Error('Not authorized');
     }
 
-    const student = await studentModel.update(
+    const student = await _Student2.default.update(
       {
         name,
         surname,
@@ -83,7 +83,7 @@ class StudentService {
       throw new Error('Send id');
     }
 
-    const student = await studentModel.findByPk(id);
+    const student = await _Student2.default.findByPk(id);
 
     if (student.id !== id) {
       throw new Error('Not authorized');
@@ -93,7 +93,7 @@ class StudentService {
       throw new Error('Student not found');
     }
 
-    const studentDeleted = await studentModel.destroy({
+    const studentDeleted = await _Student2.default.destroy({
       where: {
         id: student.id,
       },
@@ -103,4 +103,4 @@ class StudentService {
   }
 }
 
-export default new StudentService();
+exports. default = new StudentService();
