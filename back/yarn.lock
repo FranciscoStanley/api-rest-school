@@ -1238,6 +1238,11 @@
   dependencies:
     "function-bind" "^1.1.1"
 
+"helmet@^7.0.0":
+  "integrity" "sha512-MsIgYmdBh460ZZ8cJC81q4XJknjG567wzEmv46WOBblDb6TUd3z8/GhgmsM9pn8g2B80tAJ4m5/d3Bi1KrSUBQ=="
+  "resolved" "https://registry.npmjs.org/helmet/-/helmet-7.0.0.tgz"
+  "version" "7.0.0"
+
 "http-errors@2.0.0":
   "integrity" "sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ=="
   "resolved" "https://registry.npmjs.org/http-errors/-/http-errors-2.0.0.tgz"

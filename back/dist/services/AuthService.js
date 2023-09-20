@@ -21,7 +21,7 @@ class AuthService {
       expiresIn: process.env.TOKEN_EXPIRATION,
     });
 
-    return { token };
+    return JSON.stringify({ token, user: { name: user.name, id, email } });
   }
 }
 
